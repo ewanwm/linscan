@@ -1,0 +1,22 @@
+[project]
+name = "linscan"
+dynamic = ["version"]
+description = "An implementation of the LINSCAN algorithm which extends DBSCAN to perform clustering on data with linear structures"
+readme = "README.md"
+maintainers = [
+    {name = "Ewan Miller", email="emiller@ifae.es"},
+]
+authors = [
+    {name = "Ewan Miller", email="emiller@ifae.es"},
+]
+license = "GPL-3.0-or-later"
+dependencies = [
+  "numpy",
+  "scipy",
+  "scikit-learn",
+]
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
