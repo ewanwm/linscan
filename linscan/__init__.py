@@ -1,5 +1,6 @@
-from ._linscan import LINSCAN
+from ._linscan import LINSCAN, LINSCANOriginal
 
 __all__ = [
     "LINSCAN",
+    "LINSCANOriginal"
 ]

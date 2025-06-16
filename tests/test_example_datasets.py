@@ -10,7 +10,7 @@ from sklearn import cluster, datasets, mixture
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
 
-from linscan import LINSCAN
+from linscan import LINSCAN, LINSCANOriginal
 from linscan.datasets import make_a, make_t, make_v, make_duck_foot
 
 # ============
@@ -56,6 +56,7 @@ plot_num = 1
 default_base = {
     "quantile": 0.3,
     "eps": 0.3,
+    "linscan_eps": 1.5,
     "damping": 0.9,
     "preference": -200,
     "n_neighbors": 3,
@@ -116,6 +117,7 @@ datasets = [
     (
         noisy_a,
         {
+            "linscan_eps": 1.6,
             "eps": 0.2,
             "damping": 0.75,
             "preference": -220,
@@ -127,6 +129,7 @@ datasets = [
     (
         noisy_t,
         {
+            "linscan_eps": 1.525,
             "eps": 0.2,
             "damping": 0.75,
             "preference": -220,
@@ -138,6 +141,7 @@ datasets = [
     (
         noisy_v,
         {
+            "linscan_eps": 1.525,
             "eps": 0.2,
             "damping": 0.75,
             "preference": -220,
@@ -149,6 +153,7 @@ datasets = [
     (
         noisy_duck,
         {
+            "linscan_eps": 1.525,
             "eps": 0.2,
             "damping": 0.75,
             "preference": -220,
@@ -229,8 +234,9 @@ for i_dataset, (dataset, algo_params) in enumerate(datasets):
     )
 
     # Add our LINSCAN algorithm
-    linscan = LINSCAN(
-        eps = 0.0175, #params["eps"],
+    linscan = LINSCANOriginal(
+        eps = params["linscan_eps"], #1.6, #params["eps"],
+        #dbscan_eps = 1.75,
         ecc_pts = 40, #params["n_neighbors"],
         n_dims=2
     )
