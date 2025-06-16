@@ -56,7 +56,7 @@ plot_num = 1
 default_base = {
     "quantile": 0.3,
     "eps": 0.3,
-    "linscan_eps": 1.5,
+    "linscan_eps": 1.6,
     "damping": 0.9,
     "preference": -200,
     "n_neighbors": 3,
